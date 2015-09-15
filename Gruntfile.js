@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                 },
                 server: '.tmp'
             },
-            // Make sure code styles are up to par 
+            // Make sure code styles are up to par
             // and there are no obvious mistakes
             jshint: {
                 options: {
@@ -150,6 +150,17 @@ module.exports = function(grunt) {
                             '<%= props.tmp %>/directives/**/*.js'
                         ]
                     }
+                },
+                ex: {
+                    files: {
+                        'examples/<%= pkg.name %>.js': [
+                            '<%= props.tmp %>/ngData.js',
+                            '<%= props.tmp %>/constants/**/*.js',
+                            '<%= props.tmp %>/providers/**/*.js',
+                            '<%= props.tmp %>/services/**/*.js',
+                            '<%= props.tmp %>/directives/**/*.js'
+                        ]
+                    }
                 }
             },
             // ng-annotate tries to make the code safe for minification automatically
@@ -220,7 +231,14 @@ module.exports = function(grunt) {
         'jshint',
         'karma',
         'ngAnnotate',
-        'concat'
+        'concat:dist'
+    ]);
+
+    grunt.registerTask('buildex', [
+        'jshint',
+        'karma',
+        'ngAnnotate',
+        'concat:ex'
     ]);
 
     grunt.registerTask('test', [

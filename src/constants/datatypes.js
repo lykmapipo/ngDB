@@ -5,7 +5,7 @@
      * @ngdoc constant
      * @name ngDataTypes
      * @description common data types that can be used in WebSQL and SQLite
-     *              and their corresponding JS types. 
+     *              and their corresponding JS types.
      */
     angular
         .module('ngData')
