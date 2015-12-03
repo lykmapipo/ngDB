@@ -222,10 +222,6 @@
 
                 expression = sqlExpr || SQL.expr();
 
-                // _outerJoin(conditions);
-
-                // _innerJoin(conditions);
-
                 _join(conditions);
 
                 return expression;
