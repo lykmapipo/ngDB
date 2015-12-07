@@ -151,7 +151,7 @@ describe('$where', function() {
         expect($where(condition).toString()).to.equal("(age > 20 OR name = 'john') AND height = 200 AND gender = 'M'");
     }));
 
-    it('it should be able to build and expression given three joiners', inject(function($where) {
+    it('should be able to build and expression given three joiners', inject(function($where) {
         var condition = {
             $and: [{
                 $or: [{
@@ -174,7 +174,7 @@ describe('$where', function() {
         expect($where(condition).toString()).to.equal("(age > 20 OR name = 'john') AND (height = 200 OR gender = 'M')");
     }));
 
-    it('it should be able to build and expression given three joiners', inject(function($where) {
+    it('should be able to build and expression given three joiners', inject(function($where) {
         var condition = {
             $or: [{
                 $and: [{
@@ -198,7 +198,7 @@ describe('$where', function() {
     }));
 
 
-    it('it should be able to build and expression when given a plain object inside outer joiner', inject(function($where) {
+    it('should be able to build and expression when given a plain object inside outer joiner', inject(function($where) {
         var condition = {
             $or: [{
                 $and: [{
